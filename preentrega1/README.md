@@ -5,4 +5,5 @@ El objetivo del proyecto es generar una barra de menú a través de un component
 # Entregables
 1. Logo de la tienda
 2. Listado del menú
-3. Agregar boostrap
+3. Agregar una librería de estilos
+
