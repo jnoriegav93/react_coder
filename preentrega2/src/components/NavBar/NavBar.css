@@ -1,0 +1,22 @@
+.menuPrincipal{
+    background-color: black;
+    /* height: 10vh; */
+}
+.menuPrincipal{
+    margin: 0;
+    padding: 0;
+}
+.menuPrincipal ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items : center;
+    justify-content : space-evenly;
+    width: 100%;
+}
+
+.menuPrincipal ul li a{
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
