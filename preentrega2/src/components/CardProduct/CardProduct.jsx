@@ -8,12 +8,12 @@ import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import { Link } from "react-router-dom";
 
 const CardProduct = ({ data }) => {
-  //console.log(data) 
+  let location = `${window.location.protocol}//${window.location.hostname}:${window.location.port}`;
   return (
     <Card sx={{ minWidth: 350, maxWidth: 400, minHeight: 550 }}>
       <CardMedia
         sx={{ height: 400 }}
-        image={data.images[0]}
+        image={data.thumbnail}
         title={data.title}
       />
       <CardContent>
@@ -30,7 +30,7 @@ const CardProduct = ({ data }) => {
         </Typography>
       </CardContent>
       <CardActions sx={{margin: 2}}>
-        <Link to={`detail/${data.id}`}>
+        <Link to={`${location}/detail/${data.id}`}>
           <Button variant="contained" size="small">Detalle</Button>
         </Link>
         <Button variant="contained" size="small" endIcon={<LocalGroceryStoreIcon />}>

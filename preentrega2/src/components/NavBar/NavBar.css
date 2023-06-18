@@ -15,8 +15,12 @@
     width: 100%;
 }
 
-.menuPrincipal ul li a{
+.menuPrincipal ul a{
     color: white;
     list-style: none;
     text-decoration: none;
+}
+
+.Category-Link button{
+    margin: 3px;
 }
