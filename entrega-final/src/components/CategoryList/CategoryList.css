@@ -1,0 +1,13 @@
+.CategoryList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    grid-auto-rows: 1fr;
+    margin: 0px auto;
+    padding: 20px 100px;
+    background-color: rgb(240, 240, 240);
+}
+.CategoryList > div{
+    margin: 5px;
+} 

@@ -1,0 +1,15 @@
+.Header{
+    background-color: rgb(63, 63, 63);
+    color: white;
+}
+.Header img{
+    padding: 0px;
+    padding-top: 5px;
+    margin: 5px;
+}
+.Header p{
+    padding: 0px;
+    margin: 10px;
+    font-size: 16pt;
+}
+

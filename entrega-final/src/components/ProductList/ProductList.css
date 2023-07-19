@@ -1,0 +1,9 @@
+.ProductList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-auto-rows: 1fr;
+}
+.ProductList > div{
+    margin: 10px;
+} 

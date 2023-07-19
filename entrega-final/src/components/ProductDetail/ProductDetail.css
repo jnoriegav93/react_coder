@@ -1,0 +1,26 @@
+.Detalle{
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-auto-rows: 1fr;
+}
+.Detalle > div {
+    margin: 10px;
+}
+.DetalleImg img{
+    width: 100%;
+    max-width: 320px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.DetalleData{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+}
+
+.DetalleData > h2 {
+    padding: 15px 5px;
+    border-top:    1px dashed #f00;
+    border-bottom: 1px dashed #f00;
+}
+

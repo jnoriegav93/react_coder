@@ -1,0 +1,52 @@
+.CartPage{
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-auto-rows: 1fr;
+}
+.Detalle > div {
+    margin: 10px;
+}
+.Shop{
+    max-width: 100%;
+    /* max-width: 320px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.Resume{
+    max-width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* padding: 20px; */
+}
+
+
+.FormContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+	background-color: white;
+}
+
+.Textfield {
+	width: 400px;
+}
+
+.btnASendAction {
+	background: rgb(97, 206, 248);
+	color: white;
+	height: 54px;
+	width: 400px;
+	border-radius: 8px;
+	font-size: 18px;
+	transition: background, color 0.5s;
+	outline: #ff0000;
+	border: none;
+	margin: 10px;
+}
+
+.btnASendAction:hover {
+	color:black ;
+	background: yellow;
+}

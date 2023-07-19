@@ -1,32 +1,36 @@
-// import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import { Route, Router, Routes } from 'react-router-dom'
-import Menu from './components/Menu/Menu'
+//Pages
+import HomePage from './pages/HomePage/HomePage'
+import ProductsPage from './pages/ProductsPage/ProductsPage'
+import DetailPage from './pages/DetailPage/DetailPage'
+import CartPage from './pages/CartPage/CartPage'
+import ContactPage from './pages/ContactPage/ContactPage'
+import ErrorPage from './pages/ErrorPage/ErrorPage'
+import CategoryPage from './pages/CategoryPage/CategoryPage'
+import { CartProvider } from './context/CartContext/CartContext';
+
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <PlayersProvider>
+    <CartProvider>
+      <BrowserRouter>
         <div className="App">
-          <Header />
-          <Menu />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            {/* <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/shop" element={<ShopPage />} /> */}
-            <Route path="/product/:id" element={<ProductDetailPage />}
-            />
-          </Routes>
-          <Footer/>
+            <Header/>
+            <Routes>
+              <Route path="/" element={<HomePage/>}/>
+              <Route path="/contact" element={<ContactPage/>}/>
+              <Route path="/detail/:id" element={<DetailPage/>}/>
+              <Route path="/products" element={<ProductsPage/>}/>
+              <Route path="/:category/:filter" element={<CategoryPage/>}/>
+              <Route path="/cart" element={<CartPage/>}/>
+              <Route path="*" element={<ErrorPage/>}/>
+            </Routes>
         </div>
-        </PlayersProvider>
-      </Router>
-    </div>
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 
-export default App
+export default App;

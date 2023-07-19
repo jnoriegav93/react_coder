@@ -1,0 +1,48 @@
+.formBuscar{
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 500px;
+    margin: 5px;
+}
+.txtBuscar{
+    width: 400px;
+    margin-right: 20px;
+}
+
+.btnBuscar{
+    background-color: #083150;
+    color: white;
+    margin-left: 10px;
+    height: 54px;
+}
+
+/**/
+.menuPrincipal{
+    background-color: rgb(24, 24, 24);
+    /* height: 10vh; */
+}
+.menuPrincipal{
+    margin: 0;
+    padding: 0;
+}
+.menuPrincipal ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items : center;
+    justify-content : space-evenly;
+    width: 100%;
+}
+
+.menuPrincipal ul a{
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
+
+.Category-Link button{
+    margin: 3px;
+}
