@@ -9,6 +9,7 @@ import CartPage from './pages/CartPage/CartPage'
 import ContactPage from './pages/ContactPage/ContactPage'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 import CategoryPage from './pages/CategoryPage/CategoryPage'
+import ShopPage from './pages/ShopPage/ShopPage';
 import { CartProvider } from './context/CartContext/CartContext';
 
 
@@ -25,6 +26,7 @@ function App() {
               <Route path="/products" element={<ProductsPage/>}/>
               <Route path="/:category/:filter" element={<CategoryPage/>}/>
               <Route path="/cart" element={<CartPage/>}/>
+              <Route path="/shop" element={<ShopPage/>}/>
               <Route path="*" element={<ErrorPage/>}/>
             </Routes>
         </div>

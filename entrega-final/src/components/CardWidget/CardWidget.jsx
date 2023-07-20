@@ -12,7 +12,7 @@ const CardWidget = () => {
 
 
   return (
-    <div style={{display: "flex", width: "40px", alignItems: "center"}}>
+    <div className='CardWidget'>
         <LocalGroceryStoreIcon sx={{color: "white"}}/>
         <p style={{color: "white"}}>{quantity}</p>
     </div>

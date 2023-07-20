@@ -1,0 +1,8 @@
+.CardWidget{
+    display: flex;
+    width: 40px;
+    align-items: center;
+}
+.CardWidget p{
+    font-size: 12pt;
+}

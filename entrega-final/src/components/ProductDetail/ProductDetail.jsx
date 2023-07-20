@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from 'react-router-dom';
 import './ProductDetail.css'
 import { Button, TextField } from '@mui/material';
-import { AddShoppingCartRounded, ArrowBack, RemoveShoppingCartRounded, ShoppingCart } from '@mui/icons-material';
+import { Add, AddShoppingCartRounded, ArrowBack, Block, Remove, RemoveShoppingCartRounded, ShoppingCart } from '@mui/icons-material';
 import Spinner from '../Spinner/Spinner';
 import {CartContext} from "../../context/CartContext/CartContext";
 
@@ -15,16 +15,18 @@ const ProductDetail = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [cart, setCart] = useContext(CartContext);
     let { id } = useParams();
+    id = parseInt(id);
+    
     useEffect(() =>{
         const getProduct = async () => {
-        const q = query(collection(db, "products"), where("id", "==", parseInt(id)));
+        const q = query(collection(db, "products"), where("id", "==", id));
         const querySnapshot = await getDocs(q);
         const lista = [];
         querySnapshot.forEach((doc) => {
             // console.log(doc.id, " => ", doc.data());
             lista.push({...doc.data(), idFB: doc.id});
         });
-        // console.log(lista);
+        //console.log(lista);
         setProduct(lista);
         };
         getProduct();
@@ -33,9 +35,9 @@ const ProductDetail = () => {
         }, 1000);
     }, []);
 
+
     const addToCart = () =>{
         setCart((currItems) => {
-            console.log('detalle',currItems,item.id, id )
             const existItem = currItems.find( (item) => item.id === id );
             if(existItem){
                 return currItems.map( (item)=>{
@@ -46,14 +48,14 @@ const ProductDetail = () => {
                     }
                 });
             }else{
-                return [ ...currItems, { id: parseInt(id), name: product[0].productDisplayName, quantity: 1, price: product[0].price }];
+                //return currItems = {id, name: product[0].productDisplayName, quantity: 1, price: product[0].price};
+                return [ ...currItems, { id, name: product[0]?.productDisplayName || 'x', quantity: 1, price: product[0]?.price, origin: 'detail' }];
             }
         })
     }
 
     const removeFromCart = (id) =>{
         setCart((currItems) => {
-            console.log('quitar',currItems)
             if(currItems.find( (item) => item.id === id )?.quantity === 1){
                 return currItems.filter((item) => item.id!== id);
             }else{
@@ -95,27 +97,27 @@ const ProductDetail = () => {
                         <p>Categoría: {item.articleType} ( {item.gender} )</p>
                         <p>Descripción: {item.masterCategory} - {item.subCategory}</p>
                         <p>Color: { item.baseColour}</p>
-                        {
-                            quantityPerItem > 0 && (
-                                <div className='itemQuantity'>{quantityPerItem}</div>
-                            )
-                        }
+
                         <div>
-                            <Button variant="contained" size="small" color="primary" endIcon={<AddShoppingCartRounded />} 
-                                sx={{marginX: "5px", padding: "8px"}} onClick={()=> addToCart()}>
-                            Agregar al carrito
-                            </Button>
-                        </div>
-                        <div>
-                            <Button variant="contained" size="small" color="warning" endIcon={<RemoveShoppingCartRounded />} 
-                                sx={{marginX: "5px", padding: "8px"}} onClick={()=> removeFromCart(item.id)}>
-                            Quitar del carrito
-                            </Button>
+                        {quantityPerItem > 0 ?
+                        <Button variant="outlined" size="small" color="error" 
+                            className="btnDetailRemove" onClick={()=> removeFromCart(item.id)}> 
+                            <Remove />
+                        </Button>
+                        :  
+                        <Button variant="outlined" size="small" color="inherit" 
+                        className="btnDetailRemove" onClick={()=> removeFromCart(item.id)}> 
+                            <Block/>
+                        </Button> }
+                        <span style={{margin: "0px 20px"}}>{quantityPerItem}</span>
+                        <Button variant="outlined" size="small" color="success" 
+                            className="btnDetailAdd" onClick={()=> addToCart()}><Add/>
+                        </Button>
                         </div>
                         <div>
                             <Link to={`${location}/cart`}>
                                 <Button size="small" variant="contained" color="success" startIcon={<ShoppingCart />}  
-                                    sx={{marginY: "15px", padding: "8px"}}>Ver carrito de compras</Button>
+                                    sx={{marginY: "15px", padding: "8px"}}>Ver el carrito</Button>
                             </Link>
                         </div>
                     </div>

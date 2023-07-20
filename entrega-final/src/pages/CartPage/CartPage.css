@@ -1,52 +1,80 @@
 .CartPage{
     margin: 20px auto;
+	padding: 45px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    grid-auto-rows: 1fr;
+    grid-auto-rows: 1fr; 
+	text-align: left;
+	justify-content: center;
 }
+
+.CartPage h3 {
+    padding: 15px 5px;
+	color: black;
+    border-top:    1px dashed rgb(146, 146, 146);
+    border-bottom: 1px dashed rgb(146, 146, 146);
+}
+
 .Detalle > div {
     margin: 10px;
 }
+
 .Shop{
     max-width: 100%;
-    /* max-width: 320px; */
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	padding: 25px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 20px 2px;
+	background-color:  rgba(224, 224, 224, 0.2);
 }
-.Resume{
-    max-width: 100%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    /* padding: 20px; */
+
+.divCartTable {
+	overflow-x: auto;
+	max-width: 800px;
+}
+
+.cartTable {
+	width: 100%;
+	min-width: 800px;
+	margin: 0px auto;
+	border: 1px dashed rgba(209, 209, 209, 0.25);
+	text-align: center;
+}
+
+.cartTable thead{
+	background-color: rgba(146, 146, 146, 0.1);
+	height: 45px;
+}
+
+.cartTable tr{
+	height: 35px;
+}
+.cartTable tr td:first-child{
+	text-align: left;
+}
+
+.cartTable a{
+	text-decoration: solid;
+	color: #003bbb;
+}
+.cartResume{
+	min-width: 300px;
+	padding: 25px;
+	margin-left: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 20px 2px;
+	background-color:  rgba(224, 224, 224, 0.2);
+}
+
+.cartResume table{
+	width: 100%;
+}
+
+.btnGoToShop{
+	width: 100%;
+	border-radius: 20px !important;
+	margin-top: 30px !important;
 }
 
 
-.FormContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin: 20px;
-	background-color: white;
-}
-
-.Textfield {
-	width: 400px;
-}
-
-.btnASendAction {
-	background: rgb(97, 206, 248);
-	color: white;
-	height: 54px;
-	width: 400px;
-	border-radius: 8px;
-	font-size: 18px;
-	transition: background, color 0.5s;
-	outline: #ff0000;
-	border: none;
-	margin: 10px;
-}
-
-.btnASendAction:hover {
-	color:black ;
-	background: yellow;
+.btnCardRemove, .btnCardAdd{
+	width: 100%;
+	border-radius: 20px !important;
 }

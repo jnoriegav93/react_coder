@@ -1,0 +1,111 @@
+.ShopPage{
+    margin: 20px auto;
+	padding: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-auto-rows: 1fr; 
+}
+.ShopPage h3 {
+    padding: 15px 5px;
+	color: black;
+    border-top:    1px dashed rgb(146, 146, 146);
+    border-bottom: 1px dashed rgb(146, 146, 146);
+}
+.Detalle > div {
+    margin: 10px;
+}
+.Shop{
+    max-width: 100%;
+	padding: 25px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 20px 2px;
+	background-color:  rgba(224, 224, 224, 0.2);
+}
+
+.divShopTable {
+	overflow-x: auto;
+}
+.shopTable {
+	width: 100%;
+	/* max-width: 1200px; */
+	min-width: 800px;
+	margin: 0px auto;
+	border: 1px dashed rgba(209, 209, 209, 0.25);
+}
+.shopTable > th, .shopTable td{
+	padding: 10px;
+}
+
+.shopTable thead{
+	background-color: rgba(146, 146, 146, 0.25);
+	height: 45px;
+	padding: 10px;
+	text-align: center;
+}
+.shopTable tbody{
+	text-align: right;
+}
+
+.shopTable > tbody > tr:not(:last-child){
+	font-size: 10pt;
+}
+.shopTable > tbody > tr:not(:last-child) > td:nth-child(2){
+	text-align: left;
+}
+
+.shopTable > tbody > tr:last-child{
+	font-weight: 700;
+	background-color: rgba(146, 146, 146, 0.1);
+}
+
+.shopTable tr{
+	height: 35px;
+}
+
+.Payment{
+    /* max-width: 100%; */
+	max-width: 500px;
+	padding: 25px;
+	margin: 0px auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 20px 2px;
+	background-color:  rgba(224, 224, 224, 0.2);
+}
+
+.btnBackToCart{
+	width: 100%;
+	border-radius: 20px !important;
+	margin-top: 30px !important;
+}
+
+
+
+
+.FormShop {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+}
+
+.Textfield {
+	width: 400px;
+}
+
+.btnASendAction {
+	background: rgb(4, 102, 64, 0.8);
+	color: white;
+	height: 54px;
+	width: 400px;
+	border-radius: 8px;
+	font-size: 18px;
+	transition: background, color 0.5s;
+	outline: #ff0000;
+	border: none;
+	margin: 10px;
+}
+
+.btnASendAction:hover {
+	color:black ;
+	background: rgba(4, 102, 64, 1);
+}
